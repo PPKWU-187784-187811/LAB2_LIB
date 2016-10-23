@@ -10,7 +10,7 @@ public class Const {
 
     public static final String TEXT_TO_SAVE = "Hello world!";
     public static final String SUCCESS = "SUCCESS!!!";
-    public static final String FAILTURE = "FAILTURE!!!";
+    public static final String FAILURE = "FAILTURE!!!";
 
     public static final String QUESTION = "Czy chcesz storzyć nową sciezke (T/N)?";
     public static final String REPLY = "Podaj nowa sciezke:";
