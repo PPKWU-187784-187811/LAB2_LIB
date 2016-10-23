@@ -5,6 +5,10 @@ import interfaces.ICallback;
 import java.util.Optional;
 import java.util.Scanner;
 
+import static utils.Const.POSITIVE;
+import static utils.Const.QUESTION;
+import static utils.Const.REPLY;
+
 /**
  * Created by Adam Piech on 2016-10-23.
  */
@@ -14,12 +18,16 @@ public class Callback implements ICallback {
 
     @Override
     public Optional<String> getResult(Boolean result) {
-        System.out.println("Czy chcesz storzyć nową sciezke (T/N)?");
-        if (scanner.nextLine().equalsIgnoreCase("T")) {
-            System.out.print("Podaj nowa sciezke:");
+        System.out.println(QUESTION);
+        if (userAgree(scanner.nextLine())) {
+            System.out.print(REPLY);
             return Optional.of(scanner.nextLine());
         }
         return Optional.empty();
+    }
+
+    private static boolean userAgree(String string) {
+        return string.equalsIgnoreCase(POSITIVE);
     }
 
 }
