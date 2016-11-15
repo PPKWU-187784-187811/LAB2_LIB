@@ -1,6 +1,7 @@
 package implementations;
 
 import interfaces.ICallback;
+import interfaces.IExitCallback;
 
 import java.util.Optional;
 import java.util.Scanner;
@@ -17,7 +18,7 @@ public class Callback implements ICallback {
     private Scanner scanner = new Scanner(System.in);
 
     @Override
-    public Optional<String> getResult(Boolean result) {
+    public Optional<String> getResult(Boolean result, IExitCallback exitCallback) {
         System.out.println(QUESTION);
         if (userAgree(scanner.nextLine())) {
             System.out.print(REPLY);

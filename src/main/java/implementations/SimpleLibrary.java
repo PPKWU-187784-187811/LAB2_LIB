@@ -18,7 +18,7 @@ public class SimpleLibrary implements ILibrary {
     public void saveToFile(String file, String successMessage, String failureMessage, ICallback callback, IExitCallback exitCallback) {
         System.out.println(LOG + SIMPLE_LOG_MESSAGE);
         callback
-                .getResult(saveExecute(file))
+                .getResult(saveExecute(file), exitCallback)
                 .ifPresent(newFile -> saveToFile(newFile, successMessage, failureMessage, callback, exitCallback));
     }
 
