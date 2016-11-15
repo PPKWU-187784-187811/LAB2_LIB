@@ -1,6 +1,7 @@
 package implementations;
 
 import interfaces.ICallback;
+import interfaces.IExitCallback;
 import interfaces.ILibrary;
 
 import java.io.IOException;
@@ -14,11 +15,11 @@ import static utils.Const.*;
 public class SimpleLibrary implements ILibrary {
 
     @Override
-    public void saveToFile(String file, String successMessage, String failtureMessage, ICallback callback) {
+    public void saveToFile(String file, String successMessage, String failureMessage, ICallback callback, IExitCallback exitCallback) {
         System.out.println(LOG + SIMPLE_LOG_MESSAGE);
         callback
                 .getResult(saveExecute(file))
-                .ifPresent(newFile -> saveToFile(newFile, successMessage, failtureMessage, callback));
+                .ifPresent(newFile -> saveToFile(newFile, successMessage, failureMessage, callback, exitCallback));
     }
 
     private boolean saveExecute(String file) {

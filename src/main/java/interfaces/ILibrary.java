@@ -5,5 +5,5 @@ package interfaces;
  */
 public interface ILibrary {
 
-    void saveToFile(String file, String success, String failture, ICallback callback);
+    void saveToFile(String file, String success, String failure, ICallback callback, IExitCallback exitCallback);
 }
