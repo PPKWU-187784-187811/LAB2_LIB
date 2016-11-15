@@ -19,16 +19,11 @@ public class Callback implements ICallback {
 
     @Override
     public Optional<String> getResult(Boolean result, IExitCallback exitCallback) {
-        System.out.println(QUESTION);
-        if (userAgree(scanner.nextLine())) {
+        if (exitCallback.getResult(QUESTION)) {
             System.out.print(REPLY);
             return Optional.of(scanner.nextLine());
         }
         return Optional.empty();
-    }
-
-    private static boolean userAgree(String string) {
-        return string.equalsIgnoreCase(POSITIVE);
     }
 
 }
